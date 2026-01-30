@@ -1,4 +1,4 @@
-import React from 'react';
+
 import type { TitleSlide } from '../../../types/presentation';
 import { TitleBackground } from '../SlideBackgrounds';
 import { Rocket } from 'lucide-react';

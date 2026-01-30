@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import type { SlideData } from '../../types/presentation';
 import SlideRenderer from './SlideRenderer';
 import { ChevronLeft, ChevronRight } from 'lucide-react';

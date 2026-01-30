@@ -1,4 +1,4 @@
-import React from 'react';
+
 import type { EmailMockupSlide } from '../../../types/presentation';
 
 interface Props {

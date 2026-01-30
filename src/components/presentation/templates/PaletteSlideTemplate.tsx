@@ -1,4 +1,4 @@
-import React from 'react';
+
 import type { PaletteSlide } from '../../../types/presentation';
 import { ContentBackground } from '../SlideBackgrounds';
 

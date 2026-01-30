@@ -1,4 +1,4 @@
-import React from 'react';
+
 import type { SlideData } from '../../types/presentation';
 import TitleSlideTemplate from './templates/TitleSlideTemplate';
 import SummarySlideTemplate from './templates/SummarySlideTemplate';
@@ -17,7 +17,7 @@ interface Props {
     onNext?: () => void;
 }
 
-export default function SlideRenderer({ slide, currentSlideIndex, totalSlides, onNext }: Props) {
+export default function SlideRenderer({ slide, currentSlideIndex, onNext }: Props) {
     // Common Overlay for Page Number (except Title slide)
     const showPageNumber = slide.type !== 'title' && slide.type !== 'email-mockup';
 

@@ -1,4 +1,4 @@
-import React from 'react';
+
 import type { ScreenshotSlide } from '../../../types/presentation';
 import { ContentBackground } from '../SlideBackgrounds';
 

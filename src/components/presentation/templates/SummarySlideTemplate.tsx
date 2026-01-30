@@ -1,4 +1,4 @@
-import React from 'react';
+
 import type { SummarySlide } from '../../../types/presentation';
 import { ContentBackground } from '../SlideBackgrounds';
 import { Clock } from 'lucide-react'; // Placeholder icon from screenshot
@@ -21,7 +21,7 @@ export default function SummarySlideTemplate({ slide }: Props) {
 
             <div className="relative z-10 h-full flex flex-col justify-center pl-32">
                 <div className="space-y-12">
-                    {slide.items.map((item, idx) => (
+                    {slide.items.map((item) => (
                         <div key={item.id} className="flex items-center gap-12 group">
                             {/* Number */}
                             <div className="text-9xl font-light text-spekty-royal-blue relative">

@@ -1,4 +1,4 @@
-import React from 'react';
+
 import type { ScenarioSplitSlide } from '../../../types/presentation';
 import { ContentBackground } from '../SlideBackgrounds';
 import { Users, User } from 'lucide-react';

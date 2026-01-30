@@ -136,5 +136,61 @@ const demoSlides: SlideData[] = [
 ];
 
 export default function PresentationDemo() {
+    const [isAuthenticated, setIsAuthenticated] = React.useState(false);
+    const [password, setPassword] = React.useState('');
+    const [error, setError] = React.useState(false);
+
+    const handleLogin = (e?: React.FormEvent) => {
+        e?.preventDefault();
+        if (password === '1234') {
+            setIsAuthenticated(true);
+            setError(false);
+        } else {
+            setError(true);
+            setPassword('');
+        }
+    };
+
+    if (!isAuthenticated) {
+        return (
+            <div className="w-full h-screen bg-gray-900 flex flex-col items-center justify-center font-sans">
+                <div className="bg-white p-8 rounded-2xl shadow-2xl w-96 text-center">
+                    <div className="mb-6 flex justify-center">
+                        <div className="w-16 h-16 bg-spekty-navy rounded-full flex items-center justify-center text-white text-2xl font-bold font-display">
+                            S
+                        </div>
+                    </div>
+                    <h1 className="text-2xl font-bold text-gray-800 mb-2 font-display">Présentation Spekty</h1>
+                    <p className="text-gray-500 mb-6">Veuillez entrer le code d'accès</p>
+
+                    <form onSubmit={handleLogin} className="space-y-4">
+                        <input
+                            type="password"
+                            maxLength={4}
+                            value={password}
+                            onChange={(e) => {
+                                setPassword(e.target.value);
+                                setError(false);
+                            }}
+                            className={`w-full text-center text-3xl tracking-[0.5em] font-bold py-3 border-2 rounded-lg outline-none focus:border-spekty-brand-blue transition-colors ${error ? 'border-red-500 text-red-500' : 'border-gray-200 text-gray-800'
+                                }`}
+                            placeholder="••••"
+                            autoFocus
+                        />
+                        {error && (
+                            <p className="text-red-500 text-sm animate-pulse">Code incorrect</p>
+                        )}
+                        <button
+                            type="submit"
+                            className="w-full bg-spekty-navy text-white font-bold py-3 rounded-lg hover:bg-spekty-brand-blue transition-colors"
+                        >
+                            Accéder
+                        </button>
+                    </form>
+                </div>
+            </div>
+        );
+    }
+
     return <Presentation slides={demoSlides} />;
 }

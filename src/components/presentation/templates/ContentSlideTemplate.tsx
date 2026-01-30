@@ -1,4 +1,4 @@
-import React from 'react';
+
 import type { ContentSlide } from '../../../types/presentation';
 import { ContentBackground } from '../SlideBackgrounds';
 
