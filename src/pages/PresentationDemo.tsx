@@ -91,7 +91,7 @@ const demoSlides: SlideData[] = [
     },
     {
         type: 'screenshot',
-        title: "L'intervenant planifie selon les disponibilités du bénéficiaires",
+        title: "L'intervenant planifie selon les disponibilités du bénéficiaire",
         imageSrc: '/assets/intervenant-step-2-a.png',
         secondaryImageSrc: '/assets/intervenant-step-2-b.png',
         layout: 'row',
@@ -114,7 +114,7 @@ const demoSlides: SlideData[] = [
     },
     {
         type: 'screenshot',
-        title: "L'intervenant planifie selon les disponibilités du bénéficiaires",
+        title: "L'intervenant planifie selon les disponibilités du bénéficiaire",
         imageSrc: '/assets/intervenant-step-2-a.png',
         secondaryImageSrc: '/assets/intervenant-step-2-b.png',
         layout: 'row',
