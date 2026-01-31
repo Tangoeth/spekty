@@ -30,7 +30,7 @@ export default function ScenarioSplitSlideTemplate({ slide }: Props) {
                         <ul className="text-left space-y-6 px-4 w-full">
                             {slide.scenario1.items.map((item, idx) => (
                                 <li key={idx} className="flex items-start text-2xl text-gray-700 leading-relaxed">
-                                    <span className="mr-4 text-spekty-brand-blue font-bold text-3xl shrink-0">{idx + 1}.</span>
+                                    <span className="mr-4 text-spekty-brand-blue font-bold text-3xl shrink-0 w-12 text-right">{idx + 1}.</span>
                                     <span>{item}</span>
                                 </li>
                             ))}
@@ -53,7 +53,7 @@ export default function ScenarioSplitSlideTemplate({ slide }: Props) {
                         <ul className="text-left space-y-6 px-4 w-full">
                             {slide.scenario2.items.map((item, idx) => (
                                 <li key={idx} className="flex items-start text-2xl text-gray-700 leading-relaxed">
-                                    <span className="mr-4 text-spekty-green font-bold text-3xl shrink-0">{idx + 1}.</span>
+                                    <span className="mr-4 text-spekty-green font-bold text-3xl shrink-0 w-12 text-right">{idx + 1}.</span>
                                     <span>{item}</span>
                                 </li>
                             ))}
