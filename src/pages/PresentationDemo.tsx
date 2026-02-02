@@ -98,28 +98,7 @@ const demoSlides: SlideData[] = [
         caption: 'Comparaison des disponibilités : Validation directe ou proposition alternative.'
     },
 
-    {
-        type: 'section',
-        number: '3',
-        title: 'Interface Intervenant'
-    },
-    {
-        type: 'screenshot',
-        title: 'Le bénéficiaire a renseigné ses disponibilités',
-        imageSrc: '/assets/intervenant-step-1-a.png',
-        secondaryImageSrc: '/assets/intervenant-step-1-b.png',
-        layout: 'column',
-        imageFlexRatio: 0.6,
-        caption: 'Notification de disponibilité (Popup) et mise à jour du statut dans le tableau de bord (Calendrier vert).'
-    },
-    {
-        type: 'screenshot',
-        title: "L'intervenant planifie selon les disponibilités du bénéficiaire",
-        imageSrc: '/assets/intervenant-step-2-a.png',
-        secondaryImageSrc: '/assets/intervenant-step-2-b.png',
-        layout: 'row',
-        caption: 'Comparaison des disponibilités : Validation directe ou proposition alternative.'
-    },
+
     {
         type: 'section',
         number: '4',
