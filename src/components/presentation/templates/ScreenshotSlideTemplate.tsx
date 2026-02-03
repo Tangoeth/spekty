@@ -20,16 +20,16 @@ export default function ScreenshotSlideTemplate({ slide }: Props) {
             <div className="relative z-10 flex-1 flex flex-col items-center justify-center min-h-0 w-full">
                 {slide.secondaryImageSrc ? (
                     /* Dual Image Layout */
-                    <div className={`flex ${slide.layout === 'column' ? 'flex-col' : ''} gap-1 h-full items-end justify-center w-full px-0 pb-12`}>
+                    <div className={`flex ${slide.layout === 'column' ? 'flex-col' : ''} gap-1 h-full ${slide.secondaryCaption ? 'items-end pb-12' : 'items-center'} justify-center w-full px-0`}>
                         {/* First Image */}
                         <div
-                            className={`flex flex-col justify-end items-center ${slide.layout === 'column' ? 'w-full min-h-0 mt-12' : 'h-full flex-1 min-w-0'}`}
+                            className={`flex flex-col ${slide.secondaryCaption ? 'justify-end' : 'justify-center'} items-center ${slide.layout === 'column' ? 'w-full min-h-0 mt-12' : 'h-full flex-1 min-w-0'}`}
                             style={{ flex: slide.imageFlexRatio ?? 1 }}
                         >
                             <img
                                 src={slide.imageSrc}
                                 alt={slide.title}
-                                className="object-contain w-full h-auto max-w-full max-h-[85%]"
+                                className={`object-contain w-full ${slide.secondaryCaption ? 'h-auto max-h-[85%]' : 'h-full max-h-full'} max-w-full`}
                             />
                             {slide.secondaryCaption && slide.caption && (
                                 <p className="mt-4 text-center text-lg text-spekty-navy font-medium bg-white/90 px-4 py-1 rounded-full shadow-sm border border-gray-100">
@@ -39,11 +39,11 @@ export default function ScreenshotSlideTemplate({ slide }: Props) {
                         </div>
 
                         {/* Second Image */}
-                        <div className={`flex flex-col justify-end items-center relative ${slide.layout === 'column' ? 'w-full flex-1 min-h-0' : 'h-full flex-1 min-w-0'}`}>
+                        <div className={`flex flex-col ${slide.secondaryCaption ? 'justify-end' : 'justify-center'} items-center relative ${slide.layout === 'column' ? 'w-full flex-1 min-h-0' : 'h-full flex-1 min-w-0'}`}>
                             <img
                                 src={slide.secondaryImageSrc}
                                 alt={slide.title}
-                                className="object-contain w-full h-auto max-w-full max-h-[85%]"
+                                className={`object-contain w-full ${slide.secondaryCaption ? 'h-auto max-h-[85%]' : 'h-full max-h-full'} max-w-full`}
                             />
                             {slide.secondaryImageHighlight && (
                                 <div
