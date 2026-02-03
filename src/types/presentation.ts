@@ -80,6 +80,7 @@ export interface ScreenshotSlide extends BaseSlide {
     layout?: 'row' | 'column'; // Defaults to 'row'
     imageFlexRatio?: number; // Flex value for primary image (default 1). Secondary is always 1.
     caption?: string;
+    secondaryCaption?: string;
 }
 
 export type SlideData =

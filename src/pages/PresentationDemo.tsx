@@ -82,6 +82,12 @@ const demoSlides: SlideData[] = [
     },
     {
         type: 'screenshot',
+        title: 'Planification standard',
+        imageSrc: '/assets/planification-standard.png',
+        caption: "Écran lorsque le bénéficiaire n'a pas choisi de créneau."
+    },
+    {
+        type: 'screenshot',
         title: 'Le bénéficiaire a renseigné ses disponibilités',
         imageSrc: '/assets/intervenant-step-1-a.png',
         secondaryImageSrc: '/assets/intervenant-step-1-b.png',
@@ -110,7 +116,8 @@ const demoSlides: SlideData[] = [
         imageSrc: '/assets/email-confirmation-beneficiaire.jpg',
         secondaryImageSrc: '/assets/email-confirmation-intervenant.png',
         layout: 'row',
-        caption: "À gauche : Confirmation reçue par le bénéficiaire. À droite : Confirmation reçue par l'intervenant."
+        caption: "Mail de confirmation envoyé au bénéficiaire",
+        secondaryCaption: "Mail de confirmation envoyé à l'intervenant"
     }
 ];
 
