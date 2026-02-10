@@ -9,16 +9,20 @@ interface Props {
 }
 
 export const ExportButton: React.FC<Props> = ({ slides }) => {
-    const [isExporting, setIsExporting] = useState(false);
+    const [isExporting, setIsExporting] = useState<'pdf' | 'pptx' | false>(false);
     const [progress, setProgress] = useState(0);
 
-    const handlePdfExport = async () => {
-        setIsExporting(true);
+    const handleExport = async (format: 'pdf' | 'pptx') => {
+        setIsExporting(format);
         setProgress(0);
         try {
-            await exportPresentationToPDF(slides, (p) => setProgress(p));
+            if (format === 'pdf') {
+                await exportPresentationToPDF(slides, (p) => setProgress(p));
+            } else {
+                await exportPresentationToPPTX(slides, (p) => setProgress(p));
+            }
         } catch (error) {
-            console.error("PDF Export failed:", error);
+            console.error(`${format.toUpperCase()} Export failed:`, error);
             alert(`Export failed: ${(error as Error).message}`);
         } finally {
             setIsExporting(false);
@@ -29,24 +33,25 @@ export const ExportButton: React.FC<Props> = ({ slides }) => {
     return (
         <div className="fixed bottom-4 right-4 z-50 flex flex-col gap-2">
             <button
-                onClick={handlePdfExport}
-                disabled={isExporting}
+                onClick={() => handleExport('pdf')}
+                disabled={!!isExporting}
                 className={`${isExporting ? 'bg-gray-400 cursor-wait' : 'bg-red-600 hover:bg-red-700'} text-white p-3 rounded-full shadow-lg transition-colors duration-200 flex items-center gap-2 group`}
                 title="Download as PDF"
             >
-                {isExporting ? <Loader2 size={20} className="animate-spin" /> : <Download size={20} />}
+                {isExporting === 'pdf' ? <Loader2 size={20} className="animate-spin" /> : <Download size={20} />}
                 <span className="w-0 overflow-hidden group-hover:w-auto group-hover:pl-1 transition-all duration-300 whitespace-nowrap">
-                    {isExporting ? `Exporting ${progress}%` : 'Export PDF'}
+                    {isExporting === 'pdf' ? `PDF ${progress}%` : 'Export PDF'}
                 </span>
             </button>
             <button
-                onClick={() => exportPresentationToPPTX(slides)}
-                className="bg-spekty-navy hover:bg-spekty-royal-blue text-white p-3 rounded-full shadow-lg transition-colors duration-200 flex items-center gap-2 group"
+                onClick={() => handleExport('pptx')}
+                disabled={!!isExporting}
+                className={`${isExporting ? 'bg-gray-400 cursor-wait' : 'bg-spekty-navy hover:bg-spekty-royal-blue'} text-white p-3 rounded-full shadow-lg transition-colors duration-200 flex items-center gap-2 group`}
                 title="Download as PPTX"
             >
-                <Download size={20} />
+                {isExporting === 'pptx' ? <Loader2 size={20} className="animate-spin" /> : <Download size={20} />}
                 <span className="w-0 overflow-hidden group-hover:w-auto group-hover:pl-1 transition-all duration-300 whitespace-nowrap">
-                    Export PPTX
+                    {isExporting === 'pptx' ? `PPTX ${progress}%` : 'Export PPTX'}
                 </span>
             </button>
         </div>
