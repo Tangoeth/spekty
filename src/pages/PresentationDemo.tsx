@@ -1,6 +1,7 @@
 import React from 'react';
 import Presentation from '../components/presentation/Presentation';
 import type { SlideData } from '../types/presentation';
+import { ExportButton } from '../components/presentation/ExportButton';
 
 const demoSlides: SlideData[] = [
     {
@@ -178,5 +179,10 @@ export default function PresentationDemo() {
         );
     }
 
-    return <Presentation slides={demoSlides} />;
+    return (
+        <>
+            <Presentation slides={demoSlides} />
+            <ExportButton slides={demoSlides} />
+        </>
+    );
 }

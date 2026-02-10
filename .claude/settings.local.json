@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm install:*)",
+      "Bash(ls -la \"c:\\\\Users\\\\tangu\\\\.gemini\\\\antigravity\\\\playground\\\\emerald-astro\\\\public\\\\assets\"\" 2>/dev/null || echo \"Directory not found \")",
+      "Bash(npx tsc:*)",
+      "Bash(npx vite:*)"
+    ]
+  }
+}
